@@ -2,28 +2,55 @@ import { initTRPC } from "@trpc/server";
 
 const isWeb = typeof document !== "undefined";
 
-import type { Context } from "./api/router";
+import type { Service1Context } from "./api/service1/service1";
+import { Service2Context } from "./api/service2/service2";
+
+// -------------------------- SERVICE 1 INIT --------------------------
 
 // NOTE: initializing tRPC in this manner prevents the error "Uncaught Error: You're trying to use @trpc/server in a non-server environment. This is not supported by default.
-
-const trpcServer = () => {
+const initService1 = () => {
   if (!isWeb) {
-    const t = initTRPC.context<Context>().create();
+    const t = initTRPC.context<Service1Context>().create();
 
     const { middleware, router } = t;
 
-    const userProcedure = t.procedure;
+    const service1UserProcedure = t.procedure;
 
     return {
-      middleware,
-      router,
-      userProcedure,
+      service1Middleware: middleware,
+      service1Router: router,
+      service1UserProcedure,
     };
   }
 };
 
-const { ...trpc } = trpcServer() || ({} as ReturnType<typeof trpcServer>);
+const { ...service1 } =
+  initService1() || ({} as ReturnType<typeof initService1>);
 
-const { middleware, router, userProcedure } = trpc;
+const { service1Middleware, service1Router, service1UserProcedure } = service1;
 
-export { middleware, router, userProcedure };
+// -------------------------- SERVICE 2 INIT --------------------------
+
+const initService2 = () => {
+  if (!isWeb) {
+    const t = initTRPC.context<Service2Context>().create();
+
+    const { middleware, router } = t;
+
+    const service2UserProcedure = t.procedure;
+
+    return {
+      service2Middleware: middleware,
+      service2Router: router,
+      service2UserProcedure,
+    };
+  }
+};
+
+const { ...service2 } =
+  initService2() || ({} as ReturnType<typeof initService2>);
+
+const { service2Middleware, service2Router, service2UserProcedure } = service2;
+
+export { service1Middleware, service1Router, service1UserProcedure };
+export { service2Middleware, service2Router, service2UserProcedure };

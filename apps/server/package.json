@@ -7,6 +7,7 @@
     "build": "tsc"
   },
   "dependencies": {
+    "@trpc/client": "^10.8.1",
     "@trpc/server": "^10.5.0",
     "cookie-parser": "^1.4.6",
     "express": "^4.18.2",

@@ -6,7 +6,8 @@ export const Home = () => {
   const { data } = trpc.user.useQuery();
   return (
     <HomeContainer>
-      {`Role: ${data?.role}`}
+      <p>{`User name from service1: ${data?.user.name}`}</p>
+      <p>{`User role from service2: ${data?.role}`}</p>
       <Button />
     </HomeContainer>
   );

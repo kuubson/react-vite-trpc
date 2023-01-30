@@ -3,14 +3,15 @@ import type { CreateExpressContextOptions } from "@trpc/server/adapters/express"
 import { createExpressMiddleware } from "@trpc/server/adapters/express";
 import type { Application } from "express";
 
-import { service2Router, service2UserProcedure } from "trpc";
+import { service2Router } from "trpc";
+import { role } from "./resolvers";
 
 export type Service2 = typeof service2;
 
 export type Service2Context = inferAsyncReturnType<typeof createContext>;
 
 const service2 = service2Router({
-  role: service2UserProcedure.query(() => ({ role: "USER" })),
+  role,
 });
 
 const createContext = ({ req, res }: CreateExpressContextOptions) => ({

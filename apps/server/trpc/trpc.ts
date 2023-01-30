@@ -3,7 +3,13 @@ import { initTRPC } from "@trpc/server";
 const isWeb = typeof document !== "undefined";
 
 import type { Service1Context } from "./api/service1/service1";
-import { Service2Context } from "./api/service2/service2";
+import { Service2, Service2Context } from "./api/service2/service2";
+
+import { createTRPCProxyClient, httpBatchLink } from "@trpc/client";
+
+export const service2Client = createTRPCProxyClient<Service2>({
+  links: [httpBatchLink({ url: "http://localhost:3001/service2" })],
+});
 
 // -------------------------- SERVICE 1 INIT --------------------------
 

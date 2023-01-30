@@ -3,24 +3,15 @@ import type { CreateExpressContextOptions } from "@trpc/server/adapters/express"
 import { createExpressMiddleware } from "@trpc/server/adapters/express";
 import type { Application } from "express";
 
-import { createTRPCProxyClient, httpBatchLink } from "@trpc/client";
+import { service1Router } from "trpc";
+import { user } from "./resolvers";
 
-import { service1Router, service1UserProcedure } from "trpc";
-import { Service2 } from "../service2/service2";
-
-export type Service1 = typeof appRouter;
+export type Service1 = typeof service1;
 
 export type Service1Context = inferAsyncReturnType<typeof createContext>;
 
-export const service2Client = createTRPCProxyClient<Service2>({
-  links: [httpBatchLink({ url: "http://localhost:3001/service2" })],
-});
-
-const appRouter = service1Router({
-  user: service1UserProcedure.query(async () => {
-    const role = await service2Client.role.query();
-    return { user: { name: "John" }, ...role };
-  }),
+const service1 = service1Router({
+  user,
 });
 
 const createContext = ({ req, res }: CreateExpressContextOptions) => ({
@@ -32,7 +23,7 @@ export const initService1 = async (app: Application) => {
   app.use(
     "/service1",
     createExpressMiddleware({
-      router: appRouter,
+      router: service1,
       createContext,
     })
   );

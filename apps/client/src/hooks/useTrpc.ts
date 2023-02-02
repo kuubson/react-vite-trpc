@@ -19,9 +19,7 @@ export const useTrpc = () => {
 
   // NOTE: let's assume that service1 is the only main service consumed by the client | can be adjusted if it has to consume service2 etc.
   const [service1] = useState(() =>
-    trpc.createClient({
-      links: [httpLink({ url: "/service1" })],
-    })
+    trpc.createClient({ links: [httpLink({ url: "/trpc/service1" })] })
   );
 
   return {

@@ -2,7 +2,7 @@ import { QueryClient } from "@tanstack/react-query";
 import { httpLink } from "@trpc/client/links/httpLink";
 import { useState } from "react";
 
-import { trpc } from "trpc";
+import { trpc } from "api";
 
 export const useTrpc = () => {
   const [trpcQueryClient] = useState(

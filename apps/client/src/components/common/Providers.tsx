@@ -1,6 +1,6 @@
 import { QueryClientProvider } from "@tanstack/react-query";
 
-import { trpc } from "trpc";
+import { trpc } from "api";
 
 import "styles/index.scss";
 

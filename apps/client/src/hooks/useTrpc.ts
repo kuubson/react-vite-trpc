@@ -2,7 +2,7 @@ import { QueryClient } from "@tanstack/react-query";
 import { httpLink } from "@trpc/client/links/httpLink";
 import { useState } from "react";
 
-import { trpc } from "trpc";
+import { trpc } from "api";
 
 export const useTrpc = () => {
   const [trpcQueryClient] = useState(
@@ -17,12 +17,13 @@ export const useTrpc = () => {
       })
   );
 
-  const [trpcClient] = useState(() =>
-    trpc.createClient({ links: [httpLink({ url: "/trpc" })] })
+  // NOTE: let's assume that service1 is the only main service consumed by the client | can be adjusted if it has to consume service2 etc.
+  const [service1] = useState(() =>
+    trpc.createClient({ links: [httpLink({ url: "/trpc/service1" })] })
   );
 
   return {
     trpcQueryClient,
-    trpcClient,
+    service1,
   };
 };

@@ -1,4 +1,4 @@
-import { service1UserProcedure, service2Client } from "trpc/trpc";
+import { service1UserProcedure, service2Client } from "trpc";
 import { z } from "zod";
 
 export const user = service1UserProcedure

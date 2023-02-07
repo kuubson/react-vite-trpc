@@ -3,11 +3,11 @@ import type { CreateExpressContextOptions } from "@trpc/server/adapters/express"
 import { createExpressMiddleware } from "@trpc/server/adapters/express";
 import type { Application } from "express";
 import swaggerUi from "swagger-ui-express";
+import { service2Router } from "trpc";
 import {
   createOpenApiExpressMiddleware,
   generateOpenApiDocument,
 } from "trpc-openapi";
-import { service2Router } from "trpc/trpc";
 
 import { role } from "./resolvers";
 

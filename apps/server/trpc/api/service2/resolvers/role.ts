@@ -1,4 +1,4 @@
-import { service2UserProcedure } from "trpc/trpc";
+import { service2UserProcedure } from "trpc";
 import { z } from "zod";
 
 export const role = service2UserProcedure

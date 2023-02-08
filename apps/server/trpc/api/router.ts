@@ -10,7 +10,7 @@ export type AppRouter = typeof appRouter;
 export type Context = inferAsyncReturnType<typeof createContext>;
 
 const appRouter = router({
-  user: userProcedure.query(() => ({ role: "USER" })),
+  user: userProcedure.query(() => ({ role: "USER" as const })),
 });
 
 const createContext = ({ req, res }: CreateExpressContextOptions) => ({

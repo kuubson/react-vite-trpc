@@ -16,7 +16,10 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "paths": { "trpc": ["../../server/trpc"] }
+    "paths": {
+      "@trpc": ["trpc"],
+      "trpc": ["../../server/trpc"]
+    }
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

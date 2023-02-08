@@ -1,7 +1,7 @@
 import { Button } from "@example/ui";
 import styled from "styled-components";
 
-import { trpc } from "api";
+import { trpc } from "@trpc";
 
 export const Home = () => {
   const { data } = trpc.user.useQuery();

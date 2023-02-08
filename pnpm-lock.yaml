@@ -10,7 +10,6 @@ importers:
 
   apps/client:
     specifiers:
-      '@example/server': '*'
       '@example/ui': '*'
       '@tanstack/react-query': ^4.22.0
       '@trpc/client': ^10.8.1
@@ -30,7 +29,6 @@ importers:
       vite: ^4.0.0
       vite-tsconfig-paths: ^4.0.3
     dependencies:
-      '@example/server': link:../server
       '@example/ui': link:../../packages/ui
       '@tanstack/react-query': 4.22.0_biqbaboplfbrettd7655fr4n2y
       '@trpc/client': 10.8.1_@trpc+server@10.8.1

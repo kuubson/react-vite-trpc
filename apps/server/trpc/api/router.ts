@@ -3,15 +3,15 @@ import type { CreateExpressContextOptions } from "@trpc/server/adapters/express"
 import { createExpressMiddleware } from "@trpc/server/adapters/express";
 import type { Application } from "express";
 
-import { router, userProcedure } from "trpc";
+import { router } from "trpc";
+
+import { user } from "./resolvers";
 
 export type AppRouter = typeof appRouter;
 
 export type Context = inferAsyncReturnType<typeof createContext>;
 
-const appRouter = router({
-  user: userProcedure.query(() => ({ role: "USER" as const })),
-});
+const appRouter = router({ user });
 
 const createContext = ({ req, res }: CreateExpressContextOptions) => ({
   req,

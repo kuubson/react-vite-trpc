@@ -18,7 +18,8 @@
     "jsx": "react-jsx",
     "paths": {
       "@trpc": ["trpc"],
-      "trpc": ["../../server/trpc"]
+      "trpc": ["../../server/trpc"],
+      "trpc/trpc": ["../../server/trpc/trpc"]
     }
   },
   "include": ["src"],

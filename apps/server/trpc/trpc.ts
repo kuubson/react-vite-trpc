@@ -6,6 +6,6 @@ const t = initTRPC.context<Context>().create();
 
 const { middleware, router } = t;
 
-const userProcedure = t.procedure;
+export const userProcedure = t.procedure;
 
-export { middleware, router, userProcedure };
+export { middleware, router };

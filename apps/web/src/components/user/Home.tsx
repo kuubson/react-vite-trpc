@@ -1,4 +1,4 @@
-import { Button } from "@example/ui";
+import { Button } from "@react-vite-trpc/ui";
 import styled from "styled-components";
 
 import { trpc } from "trpc";

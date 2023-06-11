@@ -7,64 +7,10 @@ importers:
       turbo:
         specifier: ^1.10.3
         version: 1.10.3
-
-  apps/client:
-    dependencies:
-      '@example/ui':
-        specifier: ^0.0.0
-        version: link:../../packages/ui
-      '@tanstack/react-query':
-        specifier: ^4.29.12
-        version: 4.29.12(react-dom@18.2.0)(react@18.2.0)
-      '@trpc/client':
-        specifier: ^10.29.1
-        version: 10.29.1(@trpc/server@10.29.1)
-      '@trpc/react-query':
-        specifier: ^10.29.1
-        version: 10.29.1(@tanstack/react-query@4.29.12)(@trpc/client@10.29.1)(@trpc/server@10.29.1)(react-dom@18.2.0)(react@18.2.0)
-      '@trpc/server':
-        specifier: ^10.29.1
-        version: 10.29.1
-      react:
-        specifier: ^18.2.0
-        version: 18.2.0
-      react-dom:
-        specifier: ^18.2.0
-        version: 18.2.0(react@18.2.0)
-      react-query:
-        specifier: ^3.39.3
-        version: 3.39.3(react-dom@18.2.0)(react@18.2.0)
-      styled-components:
-        specifier: ^5.3.11
-        version: 5.3.11(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
     devDependencies:
-      '@types/react':
-        specifier: ^18.2.11
-        version: 18.2.11
-      '@types/react-dom':
-        specifier: ^18.2.4
-        version: 18.2.4
-      '@types/styled-components':
-        specifier: ^5.1.26
-        version: 5.1.26
-      '@vitejs/plugin-react':
-        specifier: ^3.1.0
-        version: 3.1.0(vite@4.3.9)
-      react-is:
-        specifier: ^18.2.0
-        version: 18.2.0
-      sass:
-        specifier: ^1.63.3
-        version: 1.63.3
-      typescript:
-        specifier: ^4.9.5
-        version: 4.9.5
-      vite:
-        specifier: ^4.3.9
-        version: 4.3.9(sass@1.63.3)
-      vite-tsconfig-paths:
-        specifier: ^4.2.0
-        version: 4.2.0(typescript@4.9.5)(vite@4.3.9)
+      eslint-config-custom:
+        specifier: '*'
+        version: link:packages/eslint-config-custom
 
   apps/server:
     dependencies:
@@ -121,6 +67,64 @@ importers:
         specifier: ^4.9.5
         version: 4.9.5
 
+  apps/web:
+    dependencies:
+      '@react-vite-trpc/ui':
+        specifier: '*'
+        version: link:../../packages/ui
+      '@tanstack/react-query':
+        specifier: ^4.29.12
+        version: 4.29.12(react-dom@18.2.0)(react@18.2.0)
+      '@trpc/client':
+        specifier: ^10.29.1
+        version: 10.29.1(@trpc/server@10.29.1)
+      '@trpc/react-query':
+        specifier: ^10.29.1
+        version: 10.29.1(@tanstack/react-query@4.29.12)(@trpc/client@10.29.1)(@trpc/server@10.29.1)(react-dom@18.2.0)(react@18.2.0)
+      '@trpc/server':
+        specifier: ^10.29.1
+        version: 10.29.1
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.2.0(react@18.2.0)
+      react-query:
+        specifier: ^3.39.3
+        version: 3.39.3(react-dom@18.2.0)(react@18.2.0)
+      styled-components:
+        specifier: ^5.3.11
+        version: 5.3.11(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
+    devDependencies:
+      '@types/react':
+        specifier: ^18.2.11
+        version: 18.2.11
+      '@types/react-dom':
+        specifier: ^18.2.4
+        version: 18.2.4
+      '@types/styled-components':
+        specifier: ^5.1.26
+        version: 5.1.26
+      '@vitejs/plugin-react':
+        specifier: ^3.1.0
+        version: 3.1.0(vite@4.3.9)
+      react-is:
+        specifier: ^18.2.0
+        version: 18.2.0
+      sass:
+        specifier: ^1.63.3
+        version: 1.63.3
+      typescript:
+        specifier: ^4.9.5
+        version: 4.9.5
+      vite:
+        specifier: ^4.3.9
+        version: 4.3.9(sass@1.63.3)
+      vite-tsconfig-paths:
+        specifier: ^4.2.0
+        version: 4.2.0(typescript@4.9.5)(vite@4.3.9)
+
   packages/eslint-config-custom:
     dependencies:
       eslint:
@@ -154,14 +158,14 @@ importers:
         specifier: ^7.32.0
         version: 7.32.0
       eslint-config-custom:
-        specifier: workspace:*
+        specifier: '*'
         version: link:../eslint-config-custom
       react:
         specifier: ^18.2.0
         version: 18.2.0
       tsconfig:
-        specifier: workspace:*
-        version: link:../tsconfig
+        specifier: '*'
+        version: 0.0.1
       typescript:
         specifier: ^4.5.2
         version: 4.9.5
@@ -875,13 +879,13 @@ packages:
     resolution: {integrity: sha512-ALYone6pm6QmwZoAgeyNksccT9Q4AWZQ6PvfwR37GT6r6FWUPguq6sUmNGSMV2Wr761oQoBxwGGa6DR5o1DC9g==}
     dependencies:
       '@types/connect': 3.4.35
-      '@types/node': 18.16.17
+      '@types/node': 16.18.35
     dev: true
 
   /@types/connect@3.4.35:
     resolution: {integrity: sha512-cdeYyv4KWoEgpBISTxWvqYsVy444DOqehiF3fM3ne10AmJ62RSyNkUnxMJXHQWRQQX2eR94m5y1IZyDwBjV9FQ==}
     dependencies:
-      '@types/node': 18.16.17
+      '@types/node': 16.18.35
     dev: true
 
   /@types/cookie-parser@1.4.3:
@@ -925,6 +929,9 @@ packages:
     resolution: {integrity: sha512-DN/CCT1HQG6HquBNJdLkvV+4v5l/oEuwOHUPLxI+Eub0NED+lk0YUfba04WGH90EINiUrNgClkNnwGmbICeWMQ==}
     dev: true
 
+  /@types/node@16.18.35:
+    resolution: {integrity: sha512-yqU2Rf94HFZqgHf6Tuyc/IqVD0l3U91KjvypSr1GtJKyrnl6L/kfnxVqN4QOwcF5Zx9tO/HKK+fozGr5AtqA+g==}
+
   /@types/node@18.16.17:
     resolution: {integrity: sha512-QAkjjRA1N7gPJeAP4WLXZtYv6+eMXFNviqktCDt4GLcmCugMr5BcRHfkOjCQzvCsnMp+L79a54zBkbw356xv9Q==}
 
@@ -960,13 +967,13 @@ packages:
     resolution: {integrity: sha512-Cwo8LE/0rnvX7kIIa3QHCkcuF21c05Ayb0ZfxPiv0W8VRiZiNW/WuRupHKpqqGVGf7SUA44QSOUKaEd9lIrd/Q==}
     dependencies:
       '@types/mime': 1.3.2
-      '@types/node': 18.16.17
+      '@types/node': 16.18.35
 
   /@types/serve-static@1.15.1:
     resolution: {integrity: sha512-NUo5XNiAdULrJENtJXZZ3fHtfMolzZwczzBbnAeBbqBwG+LaG6YaJtuwzwGSQZ2wsCrxjEhNNjAkKigy3n8teQ==}
     dependencies:
       '@types/mime': 3.0.1
-      '@types/node': 18.16.17
+      '@types/node': 16.18.35
     dev: true
 
   /@types/styled-components@5.1.26:
@@ -1890,11 +1897,26 @@ packages:
       get-intrinsic: 1.2.1
     dev: false
 
+  /glob-expand@0.0.2:
+    resolution: {integrity: sha512-V7T7b7xanrS2mXnvCc4KyakQLV2G7wrtBVjf+IePWskZukv3DejEM6wYyJwIidFJKePXOxQN0B6EYpODDmLNZw==}
+    dependencies:
+      glob: 3.1.21
+      lodash: 1.2.1
+    dev: true
+
   /glob-parent@5.1.2:
     resolution: {integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==}
     engines: {node: '>= 6'}
     dependencies:
       is-glob: 4.0.3
+
+  /glob@3.1.21:
+    resolution: {integrity: sha512-ANhy2V2+tFpRajE3wN4DhkNQ08KDr0Ir1qL12/cUe5+a7STEK8jkW4onUYuY8/06qAFuT5je7mjAqzx0eKI2tQ==}
+    dependencies:
+      graceful-fs: 1.2.3
+      inherits: 1.0.2
+      minimatch: 0.2.14
+    dev: true
 
   /glob@7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
@@ -1932,6 +1954,12 @@ packages:
     dependencies:
       get-intrinsic: 1.2.1
     dev: false
+
+  /graceful-fs@1.2.3:
+    resolution: {integrity: sha512-iiTUZ5vZ+2ZV+h71XAgwCSu6+NAizhFU3Yw8aC/hH5SQ3SnISqEqAek40imAFGtDcwJKNhXvSY+hzIolnLwcdQ==}
+    engines: {node: '>=0.4.0'}
+    deprecated: please upgrade to graceful-fs 4 for compatibility with current and future versions of Node.js
+    dev: true
 
   /has-bigints@1.0.2:
     resolution: {integrity: sha512-tSvCKtBr9lkF0Ex0aQiP9N+OpV4zi2r/Nee5VkRDbaqv35RLYMzbwQfFSZZH0kR+Rd6302UJZ2p/bJCEoR3VoQ==}
@@ -2026,6 +2054,10 @@ packages:
     dependencies:
       once: 1.4.0
       wrappy: 1.0.2
+
+  /inherits@1.0.2:
+    resolution: {integrity: sha512-Al67oatbRSo3RV5hRqIoln6Y5yMVbJSIn4jEJNL7VCImzq/kLr7vvb6sFRJXqr8rpHc/2kJOM+y0sPKN47VdzA==}
+    dev: true
 
   /inherits@2.0.4:
     resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
@@ -2225,6 +2257,11 @@ packages:
   /lodash.truncate@4.4.2:
     resolution: {integrity: sha512-jttmRe7bRse52OsWIMDLaXxWqRAmtIUccAQ3garviCqJjafXOfNMO0yMfNpdD6zbGaTU0P5Nz7e7gAT6cKmJRw==}
 
+  /lodash@1.2.1:
+    resolution: {integrity: sha512-EKI82Edm8glH3FUu17sQIF+Ly1cW2ROPc0qgf1L4DBUysBlQVL+/b+WtufJw0O8FtMo7Vq9KTrzUboyWSgW/tg==}
+    engines: {'0': node, '1': rhino}
+    dev: true
+
   /lodash@4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
     dev: false
@@ -2234,6 +2271,10 @@ packages:
     hasBin: true
     dependencies:
       js-tokens: 4.0.0
+
+  /lru-cache@2.7.3:
+    resolution: {integrity: sha512-WpibWJ60c3AgAz8a2iYErDrcT2C7OmKnsWhIcHOjkUHFjkXncJhtLxNSqUmxRxRunpb5I8Vprd7aNSd2NtksJQ==}
+    dev: true
 
   /lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
@@ -2300,6 +2341,14 @@ packages:
     engines: {node: '>=4'}
     hasBin: true
     dev: false
+
+  /minimatch@0.2.14:
+    resolution: {integrity: sha512-zZ+Jy8lVWlvqqeM8iZB7w7KmQkoJn8djM585z88rywrEbzoqawVa9FR5p2hwD+y74nfuKOjmNvi9gtWJNLqHvA==}
+    deprecated: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue
+    dependencies:
+      lru-cache: 2.7.3
+      sigmund: 1.0.1
+    dev: true
 
   /minimatch@3.1.2:
     resolution: {integrity: sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==}
@@ -2777,6 +2826,10 @@ packages:
       object-inspect: 1.12.3
     dev: false
 
+  /sigmund@1.0.1:
+    resolution: {integrity: sha512-fCvEXfh6NWpm+YSuY2bpXb/VIihqWA6hLsgboC+0nl71Q7N7o2eaCW8mJa/NLvQhs6jpd3VZV4UiUQlV6+lc8g==}
+    dev: true
+
   /simple-update-notifier@1.1.0:
     resolution: {integrity: sha512-VpsrsJSUcJEseSbMHkrsrAVSdvVS5I96Qo1QAQ4FxQ9wXFcB+pjj7FB7/us9+GcgfW4ziHtYMc1J0PLczb55mg==}
     engines: {node: '>=8.10.0'}
@@ -2980,6 +3033,13 @@ packages:
         optional: true
     dependencies:
       typescript: 4.9.5
+    dev: true
+
+  /tsconfig@0.0.1:
+    resolution: {integrity: sha512-niUm+6k+CDY/e2vHxy2o6VAJLWvbLzOGFMEgaJ+8x2MjslMK83g9LhFLxxWmBSeZDsI4Amk3bdtmT7WCpP+nuA==}
+    dependencies:
+      glob-expand: 0.0.2
+      js-yaml: 3.14.1
     dev: true
 
   /turbo-darwin-64@1.10.3:

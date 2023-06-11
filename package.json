@@ -1,6 +1,6 @@
 {
-  "name": "example",
-  "version": "0.0.0",
+  "name": "react-vite-trpc",
+  "version": "1.0.0",
   "private": true,
   "engines": {
     "node": ">=14.0.0"
@@ -12,9 +12,12 @@
   ],
   "scripts": {
     "build": "turbo run build",
-    "dev": "turbo run dev --parallel"
+    "dev": "turbo run dev"
   },
   "dependencies": {
     "turbo": "^1.10.3"
+  },
+  "devDependencies": {
+    "eslint-config-custom": "*"
   }
 }

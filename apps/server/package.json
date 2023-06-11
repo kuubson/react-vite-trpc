@@ -1,5 +1,5 @@
 {
-  "name": "@example/server",
+  "name": "@react-vite-trpc/server",
   "private": true,
   "version": "1.0.0",
   "scripts": {

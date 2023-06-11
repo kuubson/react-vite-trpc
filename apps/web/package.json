@@ -1,7 +1,7 @@
 {
-  "name": "@example/web",
+  "name": "@react-vite-trpc/web",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,7 +10,7 @@
     "build": "vite build"
   },
   "dependencies": {
-    "@example/ui": "^0.0.0",
+    "@react-vite-trpc/ui": "*",
     "@tanstack/react-query": "^4.29.12",
     "@trpc/client": "^10.29.1",
     "@trpc/react-query": "^10.29.1",

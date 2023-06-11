@@ -13,15 +13,22 @@ This setup faced a challenge while importing the `AppRouter` from the server fol
 The solution leverages Typescript references to allow importing the `AppRouter` on the client side while using absolute paths on the server side.
 
 ```js
-// apps/client/tsconfig.json
+// apps/web/tsconfig.json
 {
   "compilerOptions": {
-    "paths": {
-      "@trpc": ["trpc"],
-      "trpc": ["../../server/trpc"],
-      "trpc/trpc": ["../../server/trpc/trpc"]
-    }
+    "baseUrl": "src"
   },
+  "references": [{ "path": "../server" }] <~ fixes the /server references on the /web
+}
+
+// apps/server/tsconfig.json
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "./dist", <~ required, sets the build destination folder
+    "composite": true <~ required by design
+  },
+  "ts-node": { "swc": true }
 }
 ```
 

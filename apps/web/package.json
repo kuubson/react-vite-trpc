@@ -1,0 +1,34 @@
+{
+  "name": "@example/web",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "ts:check": "tsc -b",
+    "prebuild": "pnpm ts:check",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@example/ui": "^0.0.0",
+    "@tanstack/react-query": "^4.29.12",
+    "@trpc/client": "^10.29.1",
+    "@trpc/react-query": "^10.29.1",
+    "@trpc/server": "^10.29.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-query": "^3.39.3",
+    "styled-components": "^5.3.11"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.11",
+    "@types/react-dom": "^18.2.4",
+    "@types/styled-components": "^5.1.26",
+    "@vitejs/plugin-react": "^3.1.0",
+    "react-is": "^18.2.0",
+    "sass": "^1.63.3",
+    "typescript": "^4.9.5",
+    "vite": "^4.3.9",
+    "vite-tsconfig-paths": "^4.2.0"
+  }
+}

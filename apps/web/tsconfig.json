@@ -15,13 +15,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx",
-    "paths": {
-      "@trpc": ["trpc"],
-      "trpc": ["../../server/trpc"],
-      "trpc/trpc": ["../../server/trpc/trpc"]
-    }
+    "jsx": "react-jsx"
   },
   "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "references": [{ "path": "../server" }]
 }

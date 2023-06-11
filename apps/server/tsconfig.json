@@ -1,15 +1,16 @@
 {
-   "compilerOptions": {
-      "baseUrl": ".",
-      "target": "es6",
-      "module": "commonjs",
-      "rootDir": ".",
-      "outDir": "./dist",
-      "esModuleInterop": true,
-      "strict": true,
-      "strictNullChecks": true,
-      "strictPropertyInitialization": false,
-      "skipLibCheck": true
-   },
-   "ts-node": { "swc": true }
+  "compilerOptions": {
+    "baseUrl": ".",
+    "target": "es6",
+    "module": "commonjs",
+    "rootDir": ".",
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": false,
+    "skipLibCheck": true,
+    "composite": true
+  },
+  "ts-node": { "swc": true }
 }

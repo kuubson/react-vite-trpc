@@ -1,8 +1,8 @@
 {
-  "extends": "@react-vite-trpc/tsconfig/react.json",
-  "compilerOptions": {
-    "baseUrl": "src",
-    "outDir": "dist"
-  },
-  "references": [{ "path": "../server" }]
+   "extends": "@react-vite-trpc/tsconfig/react.json",
+   "compilerOptions": {
+      "baseUrl": "src",
+      "outDir": "dist"
+   },
+   "references": [{ "path": "../server" }]
 }

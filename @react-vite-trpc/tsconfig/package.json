@@ -1,11 +1,11 @@
 {
-  "name": "@react-vite-trpc/tsconfig",
-  "version": "1.0.0",
-  "private": true,
-    "sideEffects": false,
-  "files": [
-    "base.json",
-    "react.json",
-    "node.json"
-  ]
+   "name": "@react-vite-trpc/tsconfig",
+   "version": "1.0.0",
+   "private": true,
+   "sideEffects": false,
+   "files": [
+      "base.json",
+      "react.json",
+      "node.json"
+   ]
 }

@@ -1,18 +1,18 @@
-import express from "express";
-import http from "http";
+import express from 'express'
+import http from 'http'
 
-import "dotenv/config";
+import 'dotenv/config'
 
-import "./config/aliases";
+import './config/aliases'
 
-import { Middlewares } from "middlewares";
+import { Middlewares } from 'middlewares'
 
-const app = express();
+const app = express()
 
-const server = http.createServer(app);
+const server = http.createServer(app)
 
-Middlewares.config(app);
+Middlewares.config(app)
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3001
 
-server.listen(port, () => console.log(`🚀 Server has launched`));
+server.listen(port, () => console.log(`🚀 Server has launched`))

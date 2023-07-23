@@ -1,1 +1,1 @@
-export { useTrpc } from "./useTrpc";
+export { useTrpc } from './useTrpc'

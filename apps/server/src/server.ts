@@ -5,13 +5,13 @@ import "dotenv/config";
 
 import "./config/aliases";
 
-import { middlewares } from "middlewares";
+import { Middlewares } from "middlewares";
 
 const app = express();
 
 const server = http.createServer(app);
 
-middlewares(app);
+Middlewares.config(app);
 
 const port = process.env.PORT || 3001;
 

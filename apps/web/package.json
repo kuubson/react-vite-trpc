@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "vite",
     "ts:check": "tsc -b",
-    "prebuild": "pnpm ts:check",
-    "build": "vite build"
+    "build": "pnpm ts:check && vite build"
   },
   "dependencies": {
     "@react-vite-trpc/ui": "workspace:*",
@@ -29,6 +28,7 @@
     "sass": "^1.63.3",
     "typescript": "^4.9.5",
     "vite": "^4.3.9",
-    "vite-tsconfig-paths": "^4.2.0"
+    "vite-tsconfig-paths": "^4.2.0",
+    "@react-vite-trpc/tsconfig": "workspace:*"
   }
 }

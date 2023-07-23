@@ -1,3 +1,1 @@
-{
-  "extends": "@react-vite-trpc/tsconfig/react-library.json"
-}
+{ "extends": "@react-vite-trpc/tsconfig/react.json" }

@@ -1,16 +1,14 @@
 {
   "name": "@react-vite-trpc/eslint-config",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
     "eslint": "^7.23.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-react": "7.31.8",
-    "eslint-config-turbo": "latest"
-  },
-  "devDependencies": {
-    "typescript": "^4.7.4"
+    "eslint-config-turbo": "latest",
+    "typescript": "^4.9.5"
   },
   "publishConfig": {
     "access": "public"

@@ -4,10 +4,12 @@ import { RequestHandler } from "express-serve-static-core";
 
 import { initializeTrpc } from "trpc/api/router";
 
-export const middlewares = (app: Application) => {
-  app.use(cookieParser() as RequestHandler);
+export class Middlewares {
+  public static config(app: Application) {
+    app.use(cookieParser() as RequestHandler);
 
-  app.set("trust proxy", true);
+    app.set("trust proxy", true);
 
-  initializeTrpc(app);
-};
+    initializeTrpc(app);
+  }
+}

@@ -3,7 +3,7 @@
   "pipeline": {
     "dev": { "cache": false },
     "build": {
-      "outputs": ["build", "dist"]
+      "outputs": ["build/**", "dist/**"]
     }
   }
 }

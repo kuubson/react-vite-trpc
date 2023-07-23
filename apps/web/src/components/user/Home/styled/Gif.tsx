@@ -1,5 +1,5 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Gif = styled.img`
-  margin-top: 25px;
-`;
+   margin-top: 25px;
+`

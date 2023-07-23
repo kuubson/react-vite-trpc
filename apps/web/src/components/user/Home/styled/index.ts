@@ -1,1 +1,1 @@
-export { Gif } from "./Gif";
+export { Gif } from './Gif'

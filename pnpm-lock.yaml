@@ -27,6 +27,9 @@ importers:
       express:
         specifier: ^4.18.2
         version: 4.18.2
+      express-serve-static-core:
+        specifier: ^0.1.1
+        version: 0.1.1
       zod:
         specifier: ^3.21.4
         version: 3.21.4
@@ -1786,6 +1789,10 @@ packages:
   /etag@1.8.1:
     resolution: {integrity: sha512-aIL5Fx7mawVa300al2BnEE4iNvo1qETxLrPI/o05L7z6go7fCw1J6EQmbK4FmJ2AS7kgVF/KEZWufBfdClMcPg==}
     engines: {node: '>= 0.6'}
+    dev: false
+
+  /express-serve-static-core@0.1.1:
+    resolution: {integrity: sha512-phQFPo1vVwBLOjDq+EspUY6PpWZIs/s62Lvu6QuReViQ9j9ANBnMqPBRwdxs3zxNmpMJ9KBKrmMqCjMwHnGRyQ==}
     dev: false
 
   /express@4.18.2:

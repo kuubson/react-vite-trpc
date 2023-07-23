@@ -16,7 +16,8 @@ The solution leverages Typescript references to allow importing the `AppRouter` 
 // apps/web/tsconfig.json
 {
   "compilerOptions": {
-    "baseUrl": "src"
+    "baseUrl": "src",
+    "outDir": "dist",
   },
   "references": [{ "path": "../server" }] <~ fixes the /server references on the /web
 }
@@ -24,16 +25,16 @@ The solution leverages Typescript references to allow importing the `AppRouter` 
 // apps/web/package.json
 {
   "scripts": {
-    "prebuild": "tsc -b", <~ the -b flag is crucial when building an app that has references in its tsconfig.json
-    "build": "vite build"
+    "ts:check": "tsc -b", <~ the -b flag is crucial when building an app that has references in its tsconfig.json
+    "build": "pnpm ts:check && vite build"
   }
 }
 
 // apps/server/tsconfig.json
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "outDir": "./dist", <~ required, sets the build destination folder
+    "baseUrl": "src",
+    "outDir": "dist", <~ required, sets the build destination folder
     "composite": true <~ required to make TS references work
   },
   "ts-node": { "swc": true }

@@ -4,5 +4,7 @@
       "baseUrl": "src",
       "outDir": "dist",
       "composite": true
-   }
+   },
+   "include": ["src", "vite.config.ts", "vitest.setup.ts"],
+   "references": []
 }

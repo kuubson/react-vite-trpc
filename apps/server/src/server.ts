@@ -3,7 +3,7 @@ import express from 'express'
 import http from 'http'
 import { Middlewares } from 'middlewares'
 
-import './config/aliases'
+import './aliases'
 
 const app = express()
 

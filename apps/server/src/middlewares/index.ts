@@ -1,6 +1,6 @@
 import cookieParser from 'cookie-parser'
 import type { Application } from 'express'
-import { RequestHandler } from 'express-serve-static-core'
+import { type RequestHandler } from 'express-serve-static-core'
 import { initializeTrpc } from 'trpc/api/router'
 
 export class Middlewares {

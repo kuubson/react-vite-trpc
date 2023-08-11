@@ -25,7 +25,7 @@
       "test:coverage": "turbo run test:coverage",
       "test:coverage:preview": "turbo run test:coverage:preview",
       "cypress:install": "pnpm -F @react-vite-trpc/web cypress:install",
-      "postinstall": "pnpm ts:references && pnpm build:lib"
+      "postinstall": "pnpm build:lib"
    },
    "devDependencies": {
       "@react-vite-trpc/eslint-config": "workspace:*",

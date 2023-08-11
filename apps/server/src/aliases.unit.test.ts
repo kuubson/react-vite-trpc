@@ -1,7 +1,6 @@
 import fs from 'fs-extra'
 import moduleAlias from 'module-alias'
-import 'reflect-metadata'
-import { type SpyInstance, afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+import { afterEach, beforeEach, describe, expect, it, vi, type SpyInstance } from 'vitest'
 
 import { Aliases } from './aliases'
 

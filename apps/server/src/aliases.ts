@@ -1,7 +1,6 @@
 import { readJsonSync, readdirSync } from 'fs-extra'
 import moduleAlias from 'module-alias'
 import path from 'path'
-import 'reflect-metadata'
 
 type TsConfig = {
    extends: string

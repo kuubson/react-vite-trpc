@@ -5,5 +5,12 @@
       "outDir": "dist"
    },
    "include": ["src", "cypress", "vite.config.ts", "vitest.setup.ts"],
-   "references": [{ "path": "../server" }]
+   "references": [
+      {
+         "path": "../server"
+      },
+      {
+         "path": "../../@react-vite-trpc/ui/tsconfig.json"
+      }
+   ]
 }

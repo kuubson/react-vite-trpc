@@ -1,11 +1,9 @@
+import 'dotenv/config'
 import express from 'express'
 import http from 'http'
-
-import 'dotenv/config'
+import { Middlewares } from 'middlewares'
 
 import './config/aliases'
-
-import { Middlewares } from 'middlewares'
 
 const app = express()
 

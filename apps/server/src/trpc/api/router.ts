@@ -2,7 +2,6 @@ import type { inferAsyncReturnType } from '@trpc/server'
 import type { CreateExpressContextOptions } from '@trpc/server/adapters/express'
 import { createExpressMiddleware } from '@trpc/server/adapters/express'
 import type { Application } from 'express'
-
 import { router } from 'trpc'
 
 import { user } from './resolvers'

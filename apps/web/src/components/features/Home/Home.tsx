@@ -1,8 +1,7 @@
-import { Label } from '@react-vite-trpc/ui'
-
 import styled from 'styled-components'
-
 import { trpc } from 'trpc'
+
+import { Label } from '@react-vite-trpc/ui'
 
 import * as Styled from './styled'
 
@@ -26,7 +25,5 @@ const HomeContainer = styled.div`
    align-items: center;
    justify-content: center;
    min-height: 100vh;
-   background: #000000;
-   background: -webkit-linear-gradient(to right, #434343, #000000);
    background: linear-gradient(to right, #434343, #000000);
 `

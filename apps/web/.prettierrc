@@ -11,6 +11,38 @@
    "importOrder": [
       "<THIRD_PARTY_MODULES>",
 
+      "core",
+
+      "^env$",
+
+      "^@react-vite-trpc(.*)",
+
+      "^shared$",
+
+      "^@redux$",
+      "^@redux/reducers(.*)",
+
+      "^styles(.*)",
+
+      "^assets(.*)",
+
+      "(.*)styled$",
+      "(.*)styled/(.*)",
+
+      "^components/shared$",
+
+      "^components(.*)",
+      "(.*)/components$",
+
+      "^./modules$",
+
+      "^@redux/hooks$",
+      "^hooks$",
+      "(.*)hooks$",
+
+      "^services$",
+      "(.*)services$",
+
       "^helpers$",
       "(.*)helpers$",
 

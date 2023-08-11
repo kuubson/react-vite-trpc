@@ -21,6 +21,9 @@
 
       "^@react-vite-trpc(.*)",
 
+      "^trpc(.*)",
+      "^trpc$",
+
       "^middlewares(.*)",
 
       "^helpers$",

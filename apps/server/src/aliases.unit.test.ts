@@ -1,6 +1,6 @@
 import fs from 'fs-extra'
 import moduleAlias from 'module-alias'
-import { afterEach, beforeEach, describe, expect, it, vi, type SpyInstance } from 'vitest'
+import { type SpyInstance, afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
 import { Aliases } from './aliases'
 
@@ -41,7 +41,7 @@ describe('Aliases', () => {
       })
 
       it('should add aliases for internal packages', () => {
-         const references = [{ path: '../@weedit/config' }]
+         const references = [{ path: '../@react-vite-trpc/config' }]
 
          const tsConfig = {
             extends: '',

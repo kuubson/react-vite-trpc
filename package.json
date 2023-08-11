@@ -8,6 +8,9 @@
    },
    "scripts": {
       "start": "pnpm -F @react-vite-trpc/server start",
+      "pm2:start": "pnpm -F @react-vite-trpc/server pm2:start",
+      "pm2:delete": "pnpm -F @react-vite-trpc/server pm2:delete",
+      "pm2:logs": "pnpm -F @react-vite-trpc/server pm2:logs",
       "dev": "turbo run dev",
       "lint": "turbo run lint",
       "lint:fix": "turbo run lint:fix",
@@ -21,7 +24,8 @@
       "test:e2e:run": "turbo run test:e2e:run",
       "test:coverage": "turbo run test:coverage",
       "test:coverage:preview": "turbo run test:coverage:preview",
-      "postinstall": "pnpm build:lib"
+      "cypress:install": "pnpm -F @react-vite-trpc/web cypress:install",
+      "postinstall": "pnpm ts:references && pnpm build:lib"
    },
    "devDependencies": {
       "@react-vite-trpc/eslint-config": "workspace:*",

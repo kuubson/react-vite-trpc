@@ -17,6 +17,9 @@
 
       "^@react-vite-trpc(.*)",
 
+      "^trpc(.*)",
+      "^@trpc$",
+
       "^shared$",
 
       "^@redux$",

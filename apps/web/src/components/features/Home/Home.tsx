@@ -1,12 +1,13 @@
 import styled from 'styled-components'
-import { trpc } from 'trpc'
 
 import { Label } from '@react-vite-trpc/ui'
+
+import { trpc } from 'trpc'
 
 import * as Styled from './styled'
 
 export const Home = () => {
-   const { data } = trpc.user.useQuery()
+   const { data } = trpc.getRole.useQuery()
 
    return (
       <HomeContainer>

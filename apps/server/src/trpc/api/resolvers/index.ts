@@ -1,1 +1,1 @@
-export { user } from './user'
+export { getRole } from './getRole/getRole'

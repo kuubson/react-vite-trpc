@@ -4,11 +4,12 @@ node_modules
 # testing
 coverage
 
-# server & web build
+# builds
 dist
 
 # vite
 dev-dist
+vite.config.ts.timestamp*
 
 # misc
 .DS_Store
@@ -22,6 +23,7 @@ tsconfig.tsbuildinfo
 
 # env files
 .env
+.env.test
 
 # turbo
 .turbo

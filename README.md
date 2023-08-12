@@ -2,6 +2,9 @@
 
 A template that provides a straightforward and flexible way to use the benefits of tRPC in your React projects. It emphasizes the use of absolute paths and a monorepo approach that significantly improves the developer experience. If you're looking for a clean setup with pure React and modularization, this template is an excellent place to start!
 
+| [Stack](#-stack) | [Launch](#-quick-launch) | [Highlights](#-highlights) | [Challenge](#-the-challenge) | [Scripts](#-scripts) | [Env](#-envs) | [Ports](#-ports) | [License](#-license) |
+| ---------------- | ------------------------ | -------------------------- | ---------------------------- | -------------------- | ------------- | ---------------- | -------------------- |
+
 ## 🔧 Stack
 
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
@@ -17,15 +20,20 @@ A template that provides a straightforward and flexible way to use the benefits 
 ![Turborepo](https://img.shields.io/badge/Turborepo-EF4444.svg?style=for-the-badge&logo=Turborepo&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)
 
-## 🚀 Getting started
+## 🚀 Quick launch
 
-To run locally, trigger `pnpm install` and `pnpm dev`
+To run locally, use `pnpm install` and `pnpm dev`
+
+#### Customization:
+
+-  To adapt the template, replace `@react-vite-trpc` with `@your-idea` (using `CMD + SHIFT + H` in VS Code)
+-  When deploying, update the `host` property in `HttpService` class (`@react-vite-trpc\config\src\services\httpService.ts`)
 
 ## 🌟 Highlights
 
-| Global                                                                                                                                                                                                                                                                                                | Server                                                                                                                                                                                                                                                                                                                                                                                                          | Web                                                                                                                                                                                                                                                                                         |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <ul> <li>✅ Envs validation with `envalid` </li> <li>✨ `prettier` + `eslint`</li> <li>➡️ Auto sorting imports with `@trivago/prettier-plugin-sort-imports`</li> <li>🚀 Simple `Github Actions` workflow for ts/lint check + running tests</li> <li>📦 Bundling local packages with `tsup`</li> </ul> | <ul> <li>🔗 `tRPC` with absolute paths for imports</li> <li>✅ `vitest` (unit / integration / e2e tests) + test coverage (`istanbul`)</li> <li>⚙️ `pm2` for running server as a background process (i.e. for test coverage)</li> <li>🛠️ Absolute paths set up with `module-alias`</li> <li>⚡ Server compilation with `swc`</li> <li>🔄 `nodemon` autoreload based on source code and local packages</li> </ul> | <ul> <li>⚛️ `React` + `Vite`</li> <li>🏗️ `Feature-Driven Development` architecture</li> <li>💅 `styled-components` + `stylelint`</li> <li>🛤️ Routing with `@tanstack/router`</li> <li>✅ `vitest` (unit / integration) + test coverage (`istanbul`) </li> <li>🌐 `cypress` (e2e)</li> </ul> |
+| Global                                                                                                                                                                                                                                                                                                                                                                                      | Server                                                                                                                                                                                                                                                                                                                                                              | Web                                                                                                                                                                                                                                                                                         |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <ul> <li>✅ Envs validation with `envalid` </li> <li>✨ `prettier` + `eslint`</li> <li>➡️ Auto sorting imports with `@trivago/prettier-plugin-sort-imports`</li> <li>🚀 Simple `Github Actions` workflow for ts/lint check + running tests</li> <li>📦 Bundling local packages with `tsup`</li> <li>⚙️ `pm2` for running server as a background process (i.e. for test coverage)</li> </ul> | <ul> <li>🖧 `Express` + `tRPC`</li> <li>✅ `vitest` (unit / integration / e2e tests) + test coverage (`istanbul`)</li> <li>🔑 separated `.env` files for development and testing</li> <li>🛠️ Absolute paths set up with `module-alias`</li> <li>⚡ Server compilation with `swc`</li> <li>🔄 `nodemon` autoreload based on source code and local packages</li> </ul> | <ul> <li>⚛️ `React` + `Vite`</li> <li>🏗️ `Feature-Driven Development` architecture</li> <li>💅 `styled-components` + `stylelint`</li> <li>🛤️ Routing with `@tanstack/router`</li> <li>✅ `vitest` (unit / integration) + test coverage (`istanbul`) </li> <li>🌐 `cypress` (e2e)</li> </ul> |
 
 ## 🧩 The challenge
 
@@ -62,6 +70,53 @@ The solution leverages Typescript references to allow importing the `AppRouter` 
 }
 ```
 
-## License
+## ⌨ Scripts
+
+| command                      | description                                                                     |
+| ---------------------------- | ------------------------------------------------------------------------------- |
+| `pnpm start`                 | Runs the production build of the server (`/server`)                             |
+| `pnpm pm2:start`             | Runs the server production build as a background process, using pm2 (`/server`) |
+| `pnpm pm2:delete`            | Deletes all pm2 processes (`/server`)                                           |
+| `pnpm pm2:logs`              | Shows logs for pm2 (`/server`)                                                  |
+| `pnpm dev`                   | Launches apps and bundles all packages in watch mode                            |
+| `pnpm lint`                  | Performs an eslint check through all workspaces                                 |
+| `pnpm lint:fix`              | Performs an eslint fix through all workspaces                                   |
+| `pnpm ts:check`              | Performs a TypeScript check through all workspaces                              |
+| `pnpm ts:references`         | Syncs TypeScript references in all `tsconfig.json` files                        |
+| `pnpm stylelint`             | Performs an stylelint check through all workspaces                              |
+| `pnpm check`                 | Performs eslint, TypeScript, and stylelint checks through all workspaces        |
+| `pnpm build`                 | Builds all apps                                                                 |
+| `pnpm build:lib`             | Bundles all packages                                                            |
+| `pnpm test:unit`             | Runs unit tests in watch mode                                                   |
+| `pnpm test:unit:run`         | Runs unit tests once                                                            |
+| `pnpm test:integration`      | Runs integration tests in watch mode                                            |
+| `pnpm test:integration:run`  | Runs integration tests once                                                     |
+| `pnpm test:e2e`              | Runs e2e tests in watch mode                                                    |
+| `pnpm test:e2e:run`          | Runs e2e tests once                                                             |
+| `pnpm test:coverage`         | Generates test coverage reports                                                 |
+| `pnpm test:coverage:preview` | Generates test coverage reports and opens preview                               |
+| `pnpm cypress`               | Opens the Cypress UI (`/web`)                                                   |
+| `pnpm cypress:install`       | Installs the Cypress (`/web`)                                                   |
+| `pnpm postinstall`           | Ensures that local or CI environment is ready after installing packages         |
+
+## 🔒 Envs
+
+Envs are validated with the package `envalid`. Check out `.env-example` & `.env.test-example` files
+
+If the `pnpm dev` script is executed without the required environment variables, the application will output similar details in the console:
+
+```js
+================================
+Missing environment variables:
+PORT: Port the Express server is running on (eg. "3001"). See https://expressjs.com/en/starter/hello-world.html
+================================
+```
+
+## 🌐 Ports
+
+-  🌐 :3000 - Web
+-  🖥️ :3001 - Server
+
+## 📜 License
 
 [The MIT License (MIT)](https://github.com/kuubson/react-vite-trpc/blob/main/LICENSE)

@@ -3,6 +3,7 @@
    "compilerOptions": {
       "strict": true,
       "strictNullChecks": true,
+      "composite": true,
       "lib": ["ESNext", "DOM"],
       "module": "ESNext",
       "target": "ESNext",

@@ -1,18 +1,11 @@
-import express from 'express'
-import http from 'http'
-
 import 'dotenv/config'
 
-import './config/aliases'
+import './aliases'
+
+import { HttpServer } from 'core'
 
 import { Middlewares } from 'middlewares'
 
-const app = express()
-
-const server = http.createServer(app)
+const { app } = HttpServer.config()
 
 Middlewares.config(app)
-
-const port = process.env.PORT || 3001
-
-server.listen(port, () => console.log(`🚀 Server has launched`))

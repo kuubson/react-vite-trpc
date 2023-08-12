@@ -4,5 +4,22 @@
    "semi": false,
    "singleQuote": true,
    "arrowParens": "avoid",
-   "trailingComma": "es5"
+   "trailingComma": "es5",
+   "plugins": ["./node_modules/@trivago/prettier-plugin-sort-imports"],
+   "importOrderSeparation": true,
+   "importOrderSortSpecifiers": true,
+   "importOrder": [
+      "<THIRD_PARTY_MODULES>",
+
+      "^helpers$",
+      "(.*)helpers$",
+
+      "^utils$",
+      "(.*)utils$",
+
+      "^types(.*)",
+      "(.*)types$",
+
+      "^[./]"
+   ]
 }

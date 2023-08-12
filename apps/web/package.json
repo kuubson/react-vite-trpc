@@ -5,8 +5,22 @@
    "type": "module",
    "scripts": {
       "dev": "vite",
+      "lint": "eslint .",
+      "lint:fix": "eslint . --fix",
       "ts:check": "tsc -b",
-      "build": "pnpm ts:check && vite build"
+      "stylelint": "stylelint src/**/*.{ts,tsx,scss}",
+      "check": "pnpm lint && pnpm ts:check && pnpm stylelint",
+      "build": "pnpm ts:check && vite build",
+      "test:unit": "vitest .unit.test.ts .unit.test.tsx",
+      "test:unit:run": "pnpm test:unit --run",
+      "test:integration": "vitest .integration.test.ts .integration.test.tsx",
+      "test:integration:run": "pnpm test:integration --run",
+      "test:e2e": "cypress run --browser chrome",
+      "test:e2e:run": "cypress run",
+      "test:coverage": "vitest run --coverage",
+      "test:coverage:preview": "pnpm test:coverage && vite preview --outDir ./coverage --open",
+      "cypress": "cypress open",
+      "cypress:install": "cypress install"
    },
    "dependencies": {
       "@react-vite-trpc/ui": "workspace:*",
@@ -20,15 +34,28 @@
       "styled-components": "^5.3.11"
    },
    "devDependencies": {
+      "@testing-library/jest-dom": "^5.17.0",
+      "@testing-library/react": "^14.0.0",
+      "@types/testing-library__jest-dom": "^5.14.9",
+      "@types/jest": "^29.5.3",
       "@types/react": "^18.2.11",
       "@types/react-dom": "^18.2.4",
+      "cypress": "^12.17.3",
+      "@vitest/coverage-istanbul": "^0.34.1",
       "@types/styled-components": "^5.1.26",
       "@vitejs/plugin-react": "^3.1.0",
-      "react-is": "^18.2.0",
       "sass": "^1.63.3",
+      "envalid": "^7.3.1",
+      "@tanstack/router": "0.0.1-beta.139",
+      "postcss-styled-syntax": "^0.4.0",
+      "stylelint": "^15.10.2",
+      "jsdom": "^22.1.0",
       "typescript": "^4.9.5",
       "vite": "^4.3.9",
+      "vitest": "^0.34.1",
       "vite-tsconfig-paths": "^4.2.0",
-      "@react-vite-trpc/tsconfig": "workspace:*"
+      "@react-vite-trpc/tsconfig": "workspace:*",
+      "@react-vite-trpc/eslint-config": "workspace:*",
+      "@trivago/prettier-plugin-sort-imports": "^4.2.0"
    }
 }

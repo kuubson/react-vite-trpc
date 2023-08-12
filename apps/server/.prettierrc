@@ -1,0 +1,40 @@
+{
+   "tabWidth": 3,
+   "printWidth": 120,
+   "semi": false,
+   "singleQuote": true,
+   "arrowParens": "avoid",
+   "trailingComma": "es5",
+   "plugins": ["./node_modules/@trivago/prettier-plugin-sort-imports"],
+   "importOrderSeparation": true,
+   "importOrderSortSpecifiers": true,
+   "importOrder": [
+      "<THIRD_PARTY_MODULES>",
+
+      "^dotenv/config$",
+
+      "^(.*)aliases$",
+
+      "core",
+
+      "^env$",
+
+      "^@react-vite-trpc(.*)",
+
+      "^trpc(.*)",
+      "^trpc$",
+
+      "^middlewares(.*)",
+
+      "^helpers$",
+      "(.*)helpers$",
+
+      "^utils$",
+      "(.*)utils$",
+
+      "^types(.*)",
+      "(.*)types$",
+
+      "^[./]"
+   ]
+}

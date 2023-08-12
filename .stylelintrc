@@ -1,0 +1,10 @@
+{
+   "customSyntax": "postcss-styled-syntax",
+   "rules": {
+      "custom-property-pattern": "^[a-z][a-zA-Z0-9]+$",
+      "declaration-block-no-duplicate-properties": true,
+      "no-descending-specificity": true,
+      "value-no-vendor-prefix": null,
+      "property-no-vendor-prefix": null
+   }
+}

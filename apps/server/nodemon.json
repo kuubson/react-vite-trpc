@@ -1,1 +1,10 @@
-{ "ext": "ts,json" }
+{
+   "ext": "ts,json",
+   "execMap": {
+      "ts": "node --inspect --require ts-node/register"
+   },
+   "watch": [
+      "./src",
+      "../../@react-vite-trpc/config/dist/index.js"
+   ]
+}

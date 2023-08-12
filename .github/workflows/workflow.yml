@@ -1,0 +1,61 @@
+on:
+   push:
+      branches:
+         - main
+   pull_request:
+
+jobs:
+   lint_and_test:
+      runs-on: ubuntu-latest
+
+      steps:
+         - name: Checkout code
+           uses: actions/checkout@v3
+
+         - name: Set up Node.js
+           uses: actions/setup-node@v3
+           with:
+              node-version: '18.x'
+
+         - uses: pnpm/action-setup@v2
+           name: Install pnpm
+           with:
+              version: 8
+              run_install: false
+
+         - name: Get pnpm store directory
+           shell: bash
+           run: |
+              echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+         - uses: actions/cache@v3
+           name: Setup pnpm cache
+           with:
+              path: ${{ env.STORE_PATH }}
+              key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+              restore-keys: |
+                 ${{ runner.os }}-pnpm-store-
+
+         - name: Install dependencies
+           run: pnpm install
+
+         - name: Run pnpm check
+           run: pnpm check
+
+         - name: Run unit tests
+           run: pnpm test:unit:run
+
+         - name: Run integration tests
+           run: pnpm test:integration:run
+
+         - name: Start server background process (for e2e tests)
+           run: pnpm pm2:start
+
+         - name: Install cypress
+           run: pnpm cypress:install # NOTE: Install cypress manually due to pnpm cache issue
+
+         - name: Run e2e tests
+           run: pnpm test:e2e:run
+
+         - name: Stop server background process
+           run: pnpm pm2:delete

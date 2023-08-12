@@ -5,7 +5,7 @@ on:
    pull_request:
 
 jobs:
-   install:
+   lint_and_test:
       runs-on: ubuntu-latest
 
       steps:

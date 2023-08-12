@@ -18,6 +18,8 @@ A template that provides a straightforward and flexible way to use the benefits 
 ![tRPC](https://img.shields.io/badge/tRPC-2596BE.svg?style=for-the-badge&logo=tRPC&logoColor=white)
 [![Vitest](https://img.shields.io/badge/Vitest-%2314151B.svg?style=for-the-badge&logo=vitest&logoColor=white&color=green)](https://vitest.dev/)
 ![Turborepo](https://img.shields.io/badge/Turborepo-EF4444.svg?style=for-the-badge&logo=Turborepo&logoColor=white)
+
+![Render](https://img.shields.io/badge/Render-%46E3B7.svg?style=for-the-badge&logo=render&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)
 
 ## 🌟 Highlights
@@ -27,6 +29,8 @@ A template that provides a straightforward and flexible way to use the benefits 
 | <ul> <li>✅ Envs validation with `envalid` </li> <li>✨ `prettier` + `eslint`</li> <li>➡️ Auto sorting imports with `@trivago/prettier-plugin-sort-imports`</li> <li>🚀 Simple `Github Actions` workflow for ts/lint check + running tests</li> <li>📦 Bundling local packages with `tsup`</li> <li>⚙️ `pm2` for running server as a background process (i.e. for test coverage)</li> </ul> | <ul> <li>🖧 `Express` + `tRPC`</li> <li>✅ `vitest` (unit / integration / e2e tests) + test coverage (`istanbul`)</li> <li>🔑 separated `.env` files for development and testing</li> <li>🛠️ Absolute paths set up with `module-alias`</li> <li>⚡ Server compilation with `swc`</li> <li>🔄 `nodemon` autoreload based on source code and local packages</li> </ul> | <ul> <li>⚛️ `React` + `Vite`</li> <li>🏗️ `Feature-Driven Development` architecture</li> <li>💅 `styled-components` + `stylelint`</li> <li>🛤️ Routing with `@tanstack/router`</li> <li>✅ `vitest` (unit / integration) + test coverage (`istanbul`) </li> <li>🌐 `cypress` (e2e)</li> </ul> |
 
 ## 🚀 Quick start
+
+Preview the deployment: https://react-vite-trpc.onrender.com
 
 For local execution, use `pnpm install` and `pnpm dev`.
 

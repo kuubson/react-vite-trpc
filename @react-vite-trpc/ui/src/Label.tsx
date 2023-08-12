@@ -13,6 +13,6 @@ const LabelContainer = styled.div`
    font-family: monospace;
    border-radius: 4px;
    cursor: pointer;
-   margin-top: 20px;
+   margin-bottom: 15px;
    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 `

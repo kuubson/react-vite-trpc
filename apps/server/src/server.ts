@@ -6,6 +6,6 @@ import { HttpServer } from 'core'
 
 import { Middlewares } from 'middlewares'
 
-const { app } = HttpServer.config()
+const { app } = HttpServer.create()
 
 Middlewares.config(app)

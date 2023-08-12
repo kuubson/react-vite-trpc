@@ -4,7 +4,7 @@ import http from 'http'
 import { PORT } from 'env'
 
 export class HttpServer {
-   public static config() {
+   public static create() {
       const app = express()
 
       const server = http.createServer(app)

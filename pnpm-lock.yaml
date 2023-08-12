@@ -26,9 +26,6 @@ importers:
       glob:
         specifier: ^10.3.3
         version: 10.3.3
-      postcss-scss:
-        specifier: ^4.0.6
-        version: 4.0.6(postcss@8.4.27)
       stylelint:
         specifier: ^15.10.2
         version: 15.10.2
@@ -5134,7 +5131,7 @@ packages:
     engines: {node: '>= 4.4.x'}
     hasBin: true
     dependencies:
-      debug: 3.2.7(supports-color@8.1.1)
+      debug: 3.2.7(supports-color@5.5.0)
       iconv-lite: 0.4.24
       sax: 1.2.4
     transitivePeerDependencies:
@@ -5578,15 +5575,6 @@ packages:
     engines: {node: '>=12.0'}
     peerDependencies:
       postcss: ^8.3.3
-    dependencies:
-      postcss: 8.4.27
-    dev: true
-
-  /postcss-scss@4.0.6(postcss@8.4.27):
-    resolution: {integrity: sha512-rLDPhJY4z/i4nVFZ27j9GqLxj1pwxE80eAzUNRMXtcpipFYIeowerzBgG3yJhMtObGEXidtIgbUpQ3eLDsf5OQ==}
-    engines: {node: '>=12.0'}
-    peerDependencies:
-      postcss: ^8.4.19
     dependencies:
       postcss: 8.4.27
     dev: true

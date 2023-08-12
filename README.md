@@ -2,8 +2,8 @@
 
 A template that provides a straightforward and flexible way to use the benefits of tRPC in your React projects. It emphasizes the use of absolute paths and a monorepo approach that significantly improves the developer experience. If you're looking for a clean setup with pure React and modularization, this template is an excellent place to start!
 
-| [Stack](#-stack) | [Launch](#-quick-launch) | [Highlights](#-highlights) | [Challenge](#-the-challenge) | [Scripts](#-scripts) | [Env](#-envs) | [Ports](#-ports) | [License](#-license) |
-| ---------------- | ------------------------ | -------------------------- | ---------------------------- | -------------------- | ------------- | ---------------- | -------------------- |
+| [Stack](#-stack) | [Quick start](#-quick-start) | [Highlights](#-highlights) | [Challenge](#-the-challenge) | [Scripts](#-scripts) | [Env](#-envs) | [Ports](#-ports) | [License](#-license) |
+| ---------------- | ---------------------------- | -------------------------- | ---------------------------- | -------------------- | ------------- | ---------------- | -------------------- |
 
 ## 🔧 Stack
 
@@ -20,14 +20,21 @@ A template that provides a straightforward and flexible way to use the benefits 
 ![Turborepo](https://img.shields.io/badge/Turborepo-EF4444.svg?style=for-the-badge&logo=Turborepo&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)
 
-## 🚀 Quick launch
+## 🚀 Quick start
 
-To run locally, use `pnpm install` and `pnpm dev`
+For local execution, use `pnpm install` and `pnpm dev`.
 
-#### Customization:
+#### Customization & tips:
 
--  To adapt the template, replace `@react-vite-trpc` with `@your-idea` (using `CMD + SHIFT + H` in VS Code)
--  When deploying, update the `host` property in `HttpService` class (`@react-vite-trpc\config\src\services\httpService.ts`)
+-  To tailor the template to your needs, replace of `@react-vite-trpc` with `@your-idea` (you can use `CMD + SHIFT + H` in VS Code to do this globally)
+
+-  When deploying, make sure to update the `host` property in the `HttpService` class (`@react-vite-trpc\config\src\services\httpService.ts`)
+
+-  Adjust the preferred order of imports in `.prettierrc` files using the `importOrder` property
+
+-  When adding a new local package (i.e. `/@react-vite-trpc/new-package`), remember to update the `watch` array in `nodemon.json` and provide appropriate TypeScript references in `tsconfig.json` files for an enhanced DX
+
+-  The test coverage `.lcov` files (generated with `pnpm test:coverage`), can be easily leveraged with VS Code extension [Coverage Gutters](https://marketplace.visualstudio.com/items?itemName=ryanluker.vscode-coverage-gutters)
 
 ## 🌟 Highlights
 
@@ -72,32 +79,32 @@ The solution leverages Typescript references to allow importing the `AppRouter` 
 
 ## ⌨ Scripts
 
-| command                      | description                                                                     |
-| ---------------------------- | ------------------------------------------------------------------------------- |
-| `pnpm start`                 | Runs the production build of the server (`/server`)                             |
-| `pnpm pm2:start`             | Runs the server production build as a background process, using pm2 (`/server`) |
-| `pnpm pm2:delete`            | Deletes all pm2 processes (`/server`)                                           |
-| `pnpm pm2:logs`              | Shows logs for pm2 (`/server`)                                                  |
-| `pnpm dev`                   | Launches apps and bundles all packages in watch mode                            |
-| `pnpm lint`                  | Performs an eslint check through all workspaces                                 |
-| `pnpm lint:fix`              | Performs an eslint fix through all workspaces                                   |
-| `pnpm ts:check`              | Performs a TypeScript check through all workspaces                              |
-| `pnpm ts:references`         | Syncs TypeScript references in all `tsconfig.json` files                        |
-| `pnpm stylelint`             | Performs an stylelint check through all workspaces                              |
-| `pnpm check`                 | Performs eslint, TypeScript, and stylelint checks through all workspaces        |
-| `pnpm build`                 | Builds all apps                                                                 |
-| `pnpm build:lib`             | Bundles all packages                                                            |
-| `pnpm test:unit`             | Runs unit tests in watch mode                                                   |
-| `pnpm test:unit:run`         | Runs unit tests once                                                            |
-| `pnpm test:integration`      | Runs integration tests in watch mode                                            |
-| `pnpm test:integration:run`  | Runs integration tests once                                                     |
-| `pnpm test:e2e`              | Runs e2e tests in watch mode                                                    |
-| `pnpm test:e2e:run`          | Runs e2e tests once                                                             |
-| `pnpm test:coverage`         | Generates test coverage reports                                                 |
-| `pnpm test:coverage:preview` | Generates test coverage reports and opens preview                               |
-| `pnpm cypress`               | Opens the Cypress UI (`/web`)                                                   |
-| `pnpm cypress:install`       | Installs the Cypress (`/web`)                                                   |
-| `pnpm postinstall`           | Ensures that local or CI environment is ready after installing packages         |
+| command                      | description                                                                                     |
+| ---------------------------- | ----------------------------------------------------------------------------------------------- |
+| `pnpm start`                 | Runs the production build of the server (`/server`)                                             |
+| `pnpm pm2:start`             | Runs the server production build as a background process, using pm2 (`/server`)                 |
+| `pnpm pm2:delete`            | Deletes all pm2 processes (`/server`)                                                           |
+| `pnpm pm2:logs`              | Shows logs for pm2 (`/server`)                                                                  |
+| `pnpm dev`                   | Launches apps and bundles all packages in watch mode                                            |
+| `pnpm lint`                  | Performs an eslint check through all workspaces                                                 |
+| `pnpm lint:fix`              | Performs an eslint fix through all workspaces                                                   |
+| `pnpm ts:check`              | Performs a TypeScript check through all workspaces                                              |
+| `pnpm ts:references`         | Syncs TypeScript references in all `tsconfig.json` files + updates `nodemon.json` `watch` array |
+| `pnpm stylelint`             | Performs an stylelint check through all workspaces                                              |
+| `pnpm check`                 | Performs eslint, TypeScript, and stylelint checks through all workspaces                        |
+| `pnpm build`                 | Builds all apps                                                                                 |
+| `pnpm build:lib`             | Bundles all packages                                                                            |
+| `pnpm test:unit`             | Runs unit tests in watch mode                                                                   |
+| `pnpm test:unit:run`         | Runs unit tests once                                                                            |
+| `pnpm test:integration`      | Runs integration tests in watch mode                                                            |
+| `pnpm test:integration:run`  | Runs integration tests once                                                                     |
+| `pnpm test:e2e`              | Runs e2e tests in watch mode                                                                    |
+| `pnpm test:e2e:run`          | Runs e2e tests once                                                                             |
+| `pnpm test:coverage`         | Generates test coverage reports                                                                 |
+| `pnpm test:coverage:preview` | Generates test coverage reports and opens preview                                               |
+| `pnpm cypress`               | Opens the Cypress UI (`/web`)                                                                   |
+| `pnpm cypress:install`       | Installs the Cypress (`/web`)                                                                   |
+| `pnpm postinstall`           | Ensures that local or CI environment is ready after installing packages                         |
 
 ## 🔒 Envs
 

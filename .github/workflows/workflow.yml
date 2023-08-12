@@ -51,9 +51,8 @@ jobs:
          - name: Start server background process (for e2e tests)
            run: pnpm pm2:start
 
-           # NOTE: prevents issues with cached pnpm
          - name: Install cypress
-           run: pnpm cypress:install
+           run: pnpm cypress:install # NOTE: Install cypress manually due to pnpm cache issue
 
          - name: Run e2e tests
            run: pnpm test:e2e:run

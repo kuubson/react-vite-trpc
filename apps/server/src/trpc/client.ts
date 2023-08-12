@@ -1,6 +1,6 @@
 import { createTRPCProxyClient, httpLink } from '@trpc/client'
 
-import { HttpService } from 'core/services/httpService'
+import { HttpService } from '@react-vite-trpc/config'
 
 import { type AppRouter } from './api/router'
 

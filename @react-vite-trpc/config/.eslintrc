@@ -1,0 +1,1 @@
+{ "extends": ["@react-vite-trpc/eslint-config"] }

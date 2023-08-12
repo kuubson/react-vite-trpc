@@ -1,0 +1,26 @@
+{
+   "name": "@react-vite-trpc/config",
+   "version": "1.0.0",
+   "private": true,
+   "sideEffects": false,
+   "main": "src/index.ts",
+   "types": "src/index.ts",
+   "scripts": {
+      "dev": "pnpm build:lib --watch",
+      "lint": "eslint .",
+      "lint:fix": "eslint . --fix",
+      "ts:check": "tsc -b",
+      "check": "pnpm lint && pnpm ts:check",
+      "build:lib": "tsup src/index.ts --format cjs"
+   },
+   "dependencies": {
+      "envalid": "^7.3.1"
+   },
+   "devDependencies": {
+      "@react-vite-trpc/eslint-config": "workspace:*",
+      "@react-vite-trpc/tsconfig": "workspace:*",
+      "@types/node": "^20.4.5",
+      "tsup": "^7.1.0",
+      "typescript": "^5.1.6"
+   }
+}
